@@ -1,0 +1,60 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-acceptance-success-screen-shown-after-clicking-the-yes-button-so-it-plays-the-two-uploaded-gifs-img3-gif-and-img1-gif-as-a-looping-animation-slideshow-one-after-another-instead-of-the-current-static-meme-image",
+      "featureTitle": "Update the acceptance/success screen shown after clicking the “Yes” button so it plays the two uploaded GIFs (img3.gif and img1.gif) as a looping animation/slideshow (one after another), instead of the current static meme image.",
+      "files": [
+        "frontend/src/components/GifSlideshow.tsx",
+        "frontend/src/components/ValentineSuccessView.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-on-the-success-screen-display-the-text-exactly-as-i-love-you-himani-chauhan-in-english-placed-beneath-the-gif-animation-area",
+      "featureTitle": "On the success screen, display the text exactly as: “I love you Himani Chauhan” (in English), placed beneath the GIF animation area.",
+      "files": [
+        "frontend/src/components/ValentineSuccessView.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-preserve-the-existing-valentine-prompt-behavior-when-rebuilding-the-initial-page-shows-will-you-be-my-valentine-with-yes-and-no-buttons-and-clicking-no-progressively-increases-the-size-of-the-yes-button-without-breaking-layout",
+      "featureTitle": "Preserve the existing Valentine prompt behavior when rebuilding: the initial page shows “Will you be my Valentine?” with “Yes” and “No” buttons, and clicking “No” progressively increases the size of the “Yes” button without breaking layout.",
+      "files": [
+        "frontend/src/pages/ValentinePromptPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

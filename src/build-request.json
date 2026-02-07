@@ -1,0 +1,76 @@
+{
+  "kind": "build_request",
+  "title": "Play uploaded GIF slideshow after clicking Yes and show “I love you Himani Chauhan”",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the acceptance/success screen shown after clicking the “Yes” button so it plays the two uploaded GIFs (img3.gif and img1.gif) as a looping animation/slideshow (one after another), instead of the current static meme image.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "I want to play these two pictures after I click on yess button",
+          "Ye rebuild it and play these pics as animation"
+        ]
+      },
+      "acceptanceCriteria": [
+        "From the main Valentine prompt screen, clicking the “Yes” button navigates to/shows the success view.",
+        "The success view displays a looping slideshow using the two uploaded GIFs: img3.gif and img1.gif.",
+        "The slideshow shows exactly one GIF at a time and automatically transitions to the next on a timer; after the second GIF it loops back to the first.",
+        "The GIFs are referenced as static assets from the frontend (not served via the backend), and render correctly in production build."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "On the success screen, display the text exactly as: “I love you Himani Chauhan” (in English), placed beneath the GIF animation area.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "I love you के साथ लिख देना हिमानी चोहान"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The success screen includes the text “I love you Himani Chauhan” exactly (spelling and spacing as shown).",
+        "The text appears beneath the GIF slideshow and remains readable on both mobile and desktop screen sizes."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Preserve the existing Valentine prompt behavior when rebuilding: the initial page shows “Will you be my Valentine?” with “Yes” and “No” buttons, and clicking “No” progressively increases the size of the “Yes” button without breaking layout.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Ye rebuild it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The prompt page still shows the Valentine question and both “Yes” and “No” buttons.",
+        "Clicking “No” continues to increase the “Yes” button size progressively, capped as currently implemented.",
+        "No new regressions: the prompt page remains usable on mobile and desktop (buttons remain tappable/clickable and not clipped off-screen)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (compose them instead).",
+    "Do not edit frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, or frontend/src/main.tsx (immutable paths).",
+    "Backend must remain single-actor; no additional backend services."
+  ],
+  "nonGoals": [
+    "Adding new authentication or user accounts.",
+    "Persisting user choices or slideshow state to the backend.",
+    "Adding real-time/multiplayer features or chat."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

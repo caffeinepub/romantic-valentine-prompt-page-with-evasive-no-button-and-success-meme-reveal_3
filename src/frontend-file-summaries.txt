@@ -1,0 +1,9 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the ValentinePromptPage as the single-purpose Valentine's Day interactive experience.",
+  "frontend/src/pages/ValentinePromptPage.tsx": "Valentine prompt page with \"Will you be my Valentine?\" question where clicking \"No\" progressively scales up the \"Yes\" button (capped at 3x) with z-index fix to ensure the scaled Yes button remains clickable, and encouraging messages appearing after each No click.",
+  "frontend/src/components/ValentineSuccessView.tsx": "Success view component displaying \"I love you\" headline with animated hearts background, a looping GIF slideshow (img3.gif and img1.gif), the custom text \"I love you Himani Chauhan\", and a celebratory message after user accepts the Valentine's proposal.",
+  "frontend/src/hooks/useEvasivePosition.ts": "Custom hook that manages the evasive positioning logic for the \"No\" button, calculating safe random positions within viewport bounds while avoiding the question area and \"Yes\" button.",
+  "frontend/src/index.css": "Global styles with Google Fonts import for Nunito and Poppins, OKLCH color system for romantic pink theme in light/dark modes, and custom animations for floating hearts, fade-in, scale-in, and slide-up effects.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended font families (Nunito as default sans, Poppins as heading font), OKLCH color tokens for romantic pink theme, and custom animation settings.",
+  "frontend/src/components/GifSlideshow.tsx": "A React component that cycles through an array of GIF URLs on a timer, displaying one GIF at a time with fade-in animation and looping back to the first after the last."
+}

@@ -1,0 +1,70 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Valentine success GIF slideshow + custom love text",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Replace the success-screen static meme image with a looping two-GIF timed slideshow (img3.gif then img1.gif) referenced as frontend static assets.",
+      "acceptanceCriteria": [
+        "From the main Valentine prompt screen, clicking the “Yes” button navigates to/shows the success view.",
+        "The success view displays a looping slideshow using the two uploaded GIFs: img3.gif and img1.gif.",
+        "The slideshow shows exactly one GIF at a time and automatically transitions to the next on a timer; after the second GIF it loops back to the first.",
+        "The GIFs are referenced as static assets from the frontend (not served via the backend), and render correctly in production build."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/img3.gif",
+          "operation": "create",
+          "description": "Add the uploaded GIF asset img3.gif to the app’s static public assets so it can be referenced by the success view in production builds."
+        },
+        {
+          "path": "frontend/public/assets/img1.gif",
+          "operation": "create",
+          "description": "Add the uploaded GIF asset img1.gif to the app’s static public assets so it can be referenced by the success view in production builds."
+        },
+        {
+          "path": "frontend/src/components/GifSlideshow.tsx",
+          "operation": "create",
+          "description": "Create a small React component that cycles through a provided list of GIF src strings on a fixed timer and loops back to the beginning (show exactly one GIF at a time)."
+        },
+        {
+          "path": "frontend/src/components/ValentineSuccessView.tsx",
+          "operation": "modify",
+          "description": "Replace the current static meme <img> with the new GifSlideshow component configured to loop through /assets/img3.gif then /assets/img1.gif on a timer; ensure the slideshow area is centered and responsive."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Show the exact text “I love you Himani Chauhan” beneath the GIF slideshow on the success screen, readable on mobile and desktop.",
+      "acceptanceCriteria": [
+        "The success screen includes the text “I love you Himani Chauhan” exactly (spelling and spacing as shown).",
+        "The text appears beneath the GIF slideshow and remains readable on both mobile and desktop screen sizes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ValentineSuccessView.tsx",
+          "operation": "modify",
+          "description": "Add the exact string “I love you Himani Chauhan” as a dedicated text element placed directly beneath the GIF slideshow container; apply responsive typography so it remains readable on mobile and desktop."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Maintain the existing Valentine prompt page behavior: question + Yes/No buttons, and No clicks progressively enlarge the Yes button without layout regressions.",
+      "acceptanceCriteria": [
+        "The prompt page still shows the Valentine question and both “Yes” and “No” buttons.",
+        "Clicking “No” continues to increase the “Yes” button size progressively, capped as currently implemented.",
+        "No new regressions: the prompt page remains usable on mobile and desktop (buttons remain tappable/clickable and not clipped off-screen)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ValentinePromptPage.tsx",
+          "operation": "modify",
+          "description": "Preserve the current No-click counter and Yes-button scaling logic while adding small responsiveness safeguards (e.g., centering/spacing and overflow handling) so the scaled Yes button remains tappable and not clipped on smaller screens."
+        }
+      ]
+    }
+  ]
+}

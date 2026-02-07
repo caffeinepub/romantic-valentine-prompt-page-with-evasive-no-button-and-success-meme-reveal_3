@@ -1,2 +1,3 @@
-# romantic-valentine-prompt-page-with-evasive-no-button-and-success-meme-reveal_3
-Exported from Caffeine project: Play uploaded GIF slideshow after clicking Yes and show “I love you Himani Chauhan”
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
